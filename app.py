@@ -20,7 +20,7 @@ def api():
     pid = []
     urls = []
     for i in range(len(song["albums"]["data"])):
-        pid = (song["songs"]["data"][i]["more_info"]["song_pids"])
+        pid = (song["albums"]["data"][i]["more_info"]["song_pids"])
         pid_sep = pid.split(", ")
         url2 = song_details_base_url + pid_sep[0]
         song_info = requests.get(url2).json()
