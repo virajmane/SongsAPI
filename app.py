@@ -31,7 +31,7 @@ def api():
     songs_list = {}
     for i in range(len(song["albums"]["data"])):
         songs_list["song" + str(i + 1)] = {"Title": song["albums"]["data"][i]["title"],
-                                           "Image": song["albums"]["image"],
+                                           "Image": song["albums"]["data"][i]["image"],
                                            "Artist": song["albums"]["data"][i]["music"],
                                            "Description": song["albums"]["data"][i]["description"],
                                            "URL": urls[i]}
