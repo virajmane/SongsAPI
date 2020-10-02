@@ -29,11 +29,11 @@ def api():
         dec_url = des_cipher.decrypt(enc_url, padmode=PAD_PKCS5).decode('utf-8')
         urls.append(dec_url)
     songs_list = {}
-    for i in range(len(song["albumns"]["data"])):
-        songs_list["song" + str(i + 1)] = {"Title": song["albumns"]["data"][i]["title"],
-                                           "Image": song["albumns"]["image"],
-                                           "Artist": song["albumns"]["data"][i]["music"],
-                                           "Description": song["albumns"]["data"][i]["description"],
+    for i in range(len(song["albums"]["data"])):
+        songs_list["song" + str(i + 1)] = {"Title": song["albums"]["data"][i]["title"],
+                                           "Image": song["albums"]["image"],
+                                           "Artist": song["albums"]["data"][i]["music"],
+                                           "Description": song["albums"]["data"][i]["description"],
                                            "URL": urls[i]}
     return f"<code>{songs_list}</code>"
 
